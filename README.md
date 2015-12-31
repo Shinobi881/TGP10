@@ -8,6 +8,7 @@ Woohoo!
 
 - Josh Lehman
 - Muhsin Abdul-Musawwir
+- Sheryl Hohman
 - eiko mitani
 - Maksym
 - AJ
