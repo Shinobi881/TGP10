@@ -2,4 +2,9 @@
 
 Woohoo!
 
-eiko mitani
+
+
+#Collaborators
+- Josh Lehman
+- Muhsin Abdul-Musawwir
+- eiko mitani
