@@ -1,12 +1,3 @@
-
-function map(xs, f) {
-  var results = [];
-  for(var i = 0; i < xs.length; i++) {
-    results.push(f(xs[i]));
-  }
-  return results;
-}
-
 function inc(x) { return x + 1; }
 
 function rest(xs) {
@@ -22,16 +13,24 @@ function map0(xs, f) {
   return [];
 }
 
+// function map1(xs, f) {
+//   var results = map0(rest(xs), f);
+//   results.unshift(f(xs[0]));
+//   return results;
+// }
+
 function map1(xs, f) {
-  var results = map0([], f);
-  results.unshift(f(xs[0]));
-  return results;
+  return cons(f(xs[0]), map0(rest(xs), f));
 }
 
+// function map2(xs, f) {
+//   var results = map1(rest(xs), f);
+//   results.unshift(f(xs[0]));
+//   return results;
+// }
+
 function map2(xs, f) {
-  var results = map1(rest(xs), f);
-  results.unshift(f(xs[0]));
-  return results;
+ return cons(f(xs[0]), map1(rest(xs), f));
 }
 
 function mapN(xs, f) {
@@ -40,6 +39,14 @@ function mapN(xs, f) {
   }
 
   return cons(f(xs[0]), mapN(rest(xs), f));
+}
+
+function map(xs, f) {
+  var results = [];
+  for(var i = 0; i < xs.length; i++) {
+    results.push(f(xs[i]));
+  }
+  return results;
 }
 
 function map_iterative(xs, f) {
@@ -55,8 +62,12 @@ function map_iterative(xs, f) {
   return iter(xs, f, []);
 }
 
-
-
+map_iterative([0,1,2], inc);
+// iter([0,1,2], inc, []);
+// iter([1,2], inc, [1]);
+// iter([2], inc, [1,2]);
+// iter([], inc, [1,2,3]);
+// => [1,2,3]
 
 function factorial(n) {
   if (n <= 0) {
@@ -67,8 +78,6 @@ function factorial(n) {
   return n * factorial(n-1);
 }
 
-
-
 var n = 5;
 factorial(5);
 5 * factorial(4);
@@ -76,6 +85,7 @@ factorial(5);
 5 * 4 * 3 * factorial(2);
 5 * 4 * 3 * 2 * factorial(1);
 5 * 4 * 3 * 2 * 1;
+// => 120
 
 
 
