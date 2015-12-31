@@ -2,6 +2,7 @@
 
 Woohoo!
 
-Colaborators
-
+#Collaborators
+- Josh Lehman
+- Muhsin Abdul-Musawwir
 - Sheryl Hohman
