@@ -3,5 +3,6 @@
 Woohoo!
 
 #Collaborators
-
-us
+ -Josh
+ -Moose
+ -MEEE!!
